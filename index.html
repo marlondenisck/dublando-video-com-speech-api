@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Player com Tradução de Legendas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Video Player com Tradução e Dublagem</h1>
+
+    <div class="file-inputs">
+      <div class="input-group">
+        <label for="videoFile">Selecionar Vídeo:</label>
+        <input type="file" id="videoFile" accept="video/mp4,video/webm">
+      </div>
+
+      <div class="input-group">
+        <label for="subtitleFile">Selecionar Legendas (VTT):</label>
+        <input type="file" id="subtitleFile" accept=".vtt">
+      </div>
+    </div>
+
+    <div class="video-container">
+      <video id="videoPlayer" controls>
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
+
+      <div class="subtitle-display" id="subtitleDisplay"></div>
+
+      <div class="translation-display" id="translationDisplay"></div>
+    </div>
+
+    <div class="controls">
+      <div class="control-group">
+        <label for="enableTranslation">Ativar Tradução/Dublagem:</label>
+        <label class="switch">
+          <input type="checkbox" id="enableTranslation">
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="control-group">
+        <label for="sourceLanguage">Idioma de origem:</label>
+        <select id="sourceLanguage">
+          <option value="en">Inglês</option>
+          <option value="es">Espanhol</option>
+          <option value="fr">Francês</option>
+          <option value="de">Alemão</option>
+        </select>
+
+        <label for="targetLanguage">Idioma de destino:</label>
+        <select id="targetLanguage">
+          <option value="pt-BR" selected>Português (Brasil)</option>
+          <option value="en">Inglês</option>
+          <option value="es">Espanhol</option>
+          <option value="fr">Francês</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="voiceSelect">Voz:</label>
+        <select id="voiceSelect"></select>
+      </div>
+
+      <div class="control-group">
+        <label for="rate">Velocidade: <span id="rateValue">1.0</span></label>
+        <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1.0">
+      </div>
+
+      <div class="control-group">
+        <label for="pitch">Tom: <span id="pitchValue">1.0</span></label>
+        <input type="range" id="pitch" min="0.5" max="2" step="0.1" value="1.0">
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
